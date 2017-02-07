@@ -94,5 +94,14 @@ class Converter_Test < MiniTest::Test
     assert test_num.years_into_days == 730.5
   end
 
+  def test_miles_per_hour_to_knots
+    test_num = Converter.new(20)
+    assert test_num.miles_per_hour_to_knots.round(0) == 17
+  end
+
+  def test_knots_to_miles_per_hour
+    test_num = Converter.new(17)
+    assert test_num.knots_to_miles_per_hour.round(0) == 20
+  end
 
 end

@@ -88,4 +88,12 @@ class Converter
     number * 365.25
   end
 
+  def miles_per_hour_to_knots
+    number * 0.869
+  end
+
+  def knots_to_miles_per_hour
+    number / 0.869
+  end
+
 end
