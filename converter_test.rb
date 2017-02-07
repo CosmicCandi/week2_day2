@@ -75,12 +75,24 @@ class Converter_Test < MiniTest::Test
 
   def test_ounce_to_gram
     test_num = Converter.new(15)
-    assert test_num.ounce_to_gram == 425.2
+    assert test_num.ounce_to_gram.round(1) == 425.2
   end
 
   def test_gram_to_ounce
     test_num = Converter.new(15)
     assert test_num.gram_to_ounce.round(4) == 0.5291
   end
+
+### Adventurer Mode ###
+  def test_days_into_years
+    test_num = Converter.new(365.25)
+    assert test_num.days_into_years == 1, "A year is 365.25 days to account for leap years."
+  end
+
+  def test_years_into_days
+    test_num = Converter.new(2)
+    assert test_num.years_into_days == 730.5
+  end
+
 
 end

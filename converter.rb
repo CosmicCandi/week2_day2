@@ -80,4 +80,12 @@ class Converter
     number / 28.3495
   end
 
+  def days_into_years
+    number / 365.25
+  end
+
+  def years_into_days
+    number * 365.25
+  end
+
 end
