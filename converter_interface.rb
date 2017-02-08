@@ -60,17 +60,27 @@ case choice
 when "c"
   puts "Please enter a value (in Celcius) to convert to Fahrenheit..."
   number = gets.chomp.to_i
-  output = puts "#{number} is #{Converter.new(number).c_to_f} degrees Celsius"
+  output = puts "#{number} is #{Converter.new(number).c_to_f} degrees Fahrenheit"
     if Converter.new(number).c_to_f <= 40
       puts "Brr! That's chilly! #{output}"
-    elsif Converter.new(number).c_to_f > 41 || Converter.new(number).c_to_f < 70
+    elsif Converter.new(number).c_to_f <= 70
       puts "It's getting to be pleasant outside. #{output}"
     else
-      "It's really starting to heat up out here! #{output}"
+      puts "It's really starting to heat up out here! #{output}"
     end
 
 when "f"
-  puts "Selected f"
+  puts "Please enter a value (in Fahrenheit) to convert to Celcius..."
+  number = gets.chomp.to_i
+  output = puts "#{number} is #{Converter.new(number).f_to_c} degrees Celsius"
+    if Converter.new(number).f_to_c <= 4
+      puts "I'm freezin' out here! #{output}"
+    elsif Converter.new(number).f_to_c <= 22
+      puts "Ehh... Maybe I could learn to live with this... #{output}"
+    else
+      puts "Soon it'll be too hot to even breathe! #{output}"
+    end
+
 when "q"
   puts "Selected q"
 when "u"
